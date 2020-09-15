@@ -29,14 +29,24 @@ public class VehicleShould {
   public class TestableVehicle extends Vehicle {
 
     @Override
-    public void fillUpWithFuel() {
+    public void charge() {
 
     }
 
     @Override
-    public void chargeBattery() {
-
+    public int getChargeLevel() {
+      return 0;
     }
+
+//    @Override
+//    public void fillUpWithFuel() {
+//
+//    }
+//
+//    @Override
+//    public void chargeBattery() {
+//
+//    }
   }
 
 }

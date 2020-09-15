@@ -12,16 +12,19 @@ public class FillingStationShould {
 
     @Test
     public void refuel_a_petrol_car(){
-        PetrolCar car = new PetrolCar();
+        //PetrolCar car = new PetrolCar();
+        Vehicle car = new PetrolCar();
 
         fillingStation.refuel(car);
 
-        assertThat(car.fuelTankLevel()).isEqualTo(FULL);
+        //assertThat(car.fuelTankLevel()).isEqualTo(FULL);
+        assertThat(car.getChargeLevel()).isEqualTo(FULL);
     }
 
     @Test
     public void not_fail_refueling_an_electric_car(){
-        ElectricCar car = new ElectricCar();
+        //ElectricCar car = new ElectricCar();
+        Vehicle car = new ElectricCar();
 
         Throwable throwable = catchThrowable(() -> fillingStation.refuel(car));
 
@@ -30,16 +33,19 @@ public class FillingStationShould {
 
     @Test
     public void recharge_an_electric_car() {
-        ElectricCar car = new ElectricCar();
+        //ElectricCar car = new ElectricCar();
+        Vehicle car = new ElectricCar();
 
         fillingStation.charge(car);
 
-        assertThat(car.batteryLevel()).isEqualTo(FULL);
+        //assertThat(car.batteryLevel()).isEqualTo(FULL);
+        assertThat(car.getChargeLevel()).isEqualTo(FULL);
     }
 
     @Test
     public void not_fail_recharging_a_petrol_car() {
-        PetrolCar car = new PetrolCar();
+        //PetrolCar car = new PetrolCar();
+        Vehicle car = new PetrolCar();
 
         Throwable throwable = catchThrowable(() -> fillingStation.charge(car));
 
